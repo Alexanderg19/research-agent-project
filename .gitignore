@@ -1,0 +1,9 @@
+venv/
+.venv
+env
+dist
+.env
+temp
+.vscode
+.idea
+app/__pycache__/

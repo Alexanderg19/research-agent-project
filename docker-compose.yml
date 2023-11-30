@@ -1,0 +1,20 @@
+version: "3.11"
+services:
+  web:
+    container_name: senalsura.container
+    build:
+      dockerfile: Dockerfile
+    working_dir: /code/app
+    command: uvicorn main:app --host 0.0.0.0 --reload --port 8080
+    environment:
+      DEBUG: 1
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2}
+      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY}
+      LANGCHAIN_PROJECT: ${LANGCHAIN_PROJECT}
+      TAVILY_API_KEY: ${TAVILY_API_KEY}
+    volumes:
+      - ./app:/code/app
+    ports:
+      - 8080:8080
+    restart: on-failure

@@ -1,0 +1,9 @@
+fastapi>=0.100
+pydantic>=2.3
+pydantic-settings
+uvicorn>=0.23
+langchain>=0.0.293
+python-dotenv
+openai
+beautifulsoup4
+duckduckgo-search
